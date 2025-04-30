@@ -28,10 +28,10 @@
   </style>
 </head>
 <body>
-  <img src="img.jpg" alt="Invitación a reunión familiar" />
+  
 
   <div id="countdown">Cargando cuenta regresiva...</div>
-
+  <img src="img.jpg" alt="Invitación a reunión familiar" />
   <script>
     const eventoFecha = new Date("2025-05-04T10:30:00").getTime();
 
@@ -52,6 +52,7 @@
         document.getElementById("countdown").innerHTML = "¡Ya comenzó la reunión familiar!";
       }
     }, 1000);
+    
   </script>
 </body>
 </html>
