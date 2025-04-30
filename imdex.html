@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuenta regresiva - Reunión Familiar</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    #countdown {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #8e96de;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <img src="img.jpg" alt="Invitación a reunión familiar" />
+
+  <div id="countdown">Cargando cuenta regresiva...</div>
+
+  <script>
+    const eventoFecha = new Date("2025-05-04T10:30:00").getTime();
+
+    const timer = setInterval(() => {
+      const ahora = new Date().getTime();
+      const diferencia = eventoFecha - ahora;
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      if (diferencia >= 0) {
+        document.getElementById("countdown").innerHTML =
+          `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+      } else {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la reunión familiar!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
