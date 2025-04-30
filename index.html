@@ -33,6 +33,7 @@
 
   <div id="countdown">Cargando cuenta regresiva...</div>
   <img src="img.jpg" alt="Invitación a reunión familiar" />
+
   <script>
     const eventoFecha = new Date("2025-05-04T10:30:00").getTime();
 
@@ -50,7 +51,8 @@
           `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
       } else {
         clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "¡Ya comenzó la reunión familiar!";
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la reunión familiar  🎊 🎊 🎊!";
+        /* window.location.href = "evento.html"; // Aquí pones la página a la que quieres redirigir */
       }
     }, 1000);
     
